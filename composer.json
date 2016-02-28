@@ -6,7 +6,7 @@
 	"keywords": ["service", "server", "golang", "php"],
 	"homepage": "https://github.com/rebel-l/benchmark-bservice",
 	"require-dev": {
-		"rebel-l/sisa": "1.3.*"
+		"rebel-l/sisa": "1.4.*"
 	},
 	"license": "MIT",
 	"authors": [
