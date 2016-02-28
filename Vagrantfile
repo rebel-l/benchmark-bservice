@@ -31,7 +31,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 			chef.environments_path = "./vendor/rebel-l/sisa/environments"
 			chef.data_bags_path = "./vendor/rebel-l/sisa/data_bags"
 			chef.environment = "development"
-			chef.add_role "Default"
+			chef.add_role "ToolBox"
 		end
 	end
 
