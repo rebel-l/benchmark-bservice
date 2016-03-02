@@ -47,6 +47,18 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 			chef.data_bags_path = "./vendor/rebel-l/sisa/data_bags"
 			chef.environment = "development"
 			chef.add_role "WebServer"
+
+			chef.json = {
+				'projects' => [
+					{
+						'name'			=> 'benchmark',
+						'type'			=> 'service',
+						'server_name'	=> '192.168.34.3',
+						'root'			=> '/vagrant/src/php',
+						'index'			=> 'index.php'
+					}
+				]
+			}
 		end
 	end
 
