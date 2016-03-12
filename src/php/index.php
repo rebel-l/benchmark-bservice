@@ -21,5 +21,5 @@ if (isset($_GET['name'])) {
 $sentence = new stdClass();
 $sentence->sentence = 'Hello ' . $name . '!';
 
-header('Content-Type: text/json');
+header('Content-Type: application/json');
 echo json_encode($sentence);
