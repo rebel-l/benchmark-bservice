@@ -62,12 +62,33 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 		end
 	end
 
-	# Setup for GoService machine only
+	# Setup for PhpService with Apache machine only
 	config.vm.define "PhpApacheService", autostart: false do |phpas|
 		phpas.vm.network "private_network", ip: "192.168.34.5"
 
 		# Chef Configuration
 		phpas.vm.provision "chef_solo" do |chef|
+			chef.cookbooks_path = "./vendor/rebel-l/sisa/cookbooks"
+			chef.roles_path = "./vendor/rebel-l/sisa/roles"
+			chef.environments_path = "./vendor/rebel-l/sisa/environments"
+			chef.data_bags_path = "./vendor/rebel-l/sisa/data_bags"
+			chef.add_role "Default"
+			chef.environment = "development"
+
+			chef.json = {
+				'Iptables' => {
+					'WEBSERVER'		=> 'On'
+				}
+			}
+		end
+	end
+
+	# Setup for PhpService with Apache and PHP FPM machine only
+	config.vm.define "PhpApacheFPMService", autostart: false do |phpafs|
+		phpafs.vm.network "private_network", ip: "192.168.34.6"
+
+		# Chef Configuration
+		phpafs.vm.provision "chef_solo" do |chef|
 			chef.cookbooks_path = "./vendor/rebel-l/sisa/cookbooks"
 			chef.roles_path = "./vendor/rebel-l/sisa/roles"
 			chef.environments_path = "./vendor/rebel-l/sisa/environments"
