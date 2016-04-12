@@ -117,6 +117,33 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 			chef.add_role "Default"
 			chef.environment = "development"
 			chef.add_recipe "GolangCompiler"
+
+			chef.json = {
+				'Iptables' => {
+					'WEBSERVER'		=> 'On'
+				}
+			}
+		end
+	end
+
+	# Setup for GoService machine only
+	config.vm.define "NodeJsService", autostart: true do |njs|
+		njs.vm.network "private_network", ip: "192.168.34.7"
+
+		# Chef Configuration
+		njs.vm.provision "chef_solo" do |chef|
+			chef.cookbooks_path = "./vendor/rebel-l/sisa/cookbooks"
+			chef.roles_path = "./vendor/rebel-l/sisa/roles"
+			chef.environments_path = "./vendor/rebel-l/sisa/environments"
+			chef.data_bags_path = "./vendor/rebel-l/sisa/data_bags"
+			chef.add_role "Default"
+			chef.environment = "development"
+
+			chef.json = {
+				'Iptables' => {
+					'WEBSERVER'		=> 'On'
+				}
+			}
 		end
 	end
 end
