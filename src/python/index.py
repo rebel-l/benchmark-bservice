@@ -1,11 +1,8 @@
 #!/usr/bin/python
-import cgi, cgitb, json
+import cgi, json
 
-print("Content-Type: text/html")
-# print("Content-Type: application/json")
+print("Content-Type: application/json")
 print()
-
-cgitb.enable()
 
 form = cgi.FieldStorage()
 
