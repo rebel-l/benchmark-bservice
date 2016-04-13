@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
+rm /usr/bin/python
+ln -s /usr/bin/python3 /usr/bin/python
+
 apt-get update
 
-apt-get -y install apache2 libapache2-mod-python
+apt-get -y install apache2
+
+a2dismod mpm_event
+a2enmod mpm_prefork cgi
 
 cp 000-default.conf /etc/apache2/sites-available/
 
