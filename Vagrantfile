@@ -126,7 +126,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 		end
 	end
 
-	# Setup for GoService machine only
+	# Setup for NodeJsService machine only
 	config.vm.define "NodeJsService", autostart: true do |njs|
 		njs.vm.network "private_network", ip: "192.168.34.7"
 
@@ -147,12 +147,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 		end
 	end
 
-	# Setup for PhpService with Apache machine only
-	config.vm.define "PythonApacheService", autostart: false do |phpas|
-		phpas.vm.network "private_network", ip: "192.168.34.8"
+	# Setup for PythonApacheService with Apache machine only
+	config.vm.define "PythonApacheService", autostart: false do |pyas|
+		pyas.vm.network "private_network", ip: "192.168.34.8"
 
 		# Chef Configuration
-		phpas.vm.provision "chef_solo" do |chef|
+		pyas.vm.provision "chef_solo" do |chef|
 			chef.cookbooks_path = "./vendor/rebel-l/sisa/cookbooks"
 			chef.roles_path = "./vendor/rebel-l/sisa/roles"
 			chef.environments_path = "./vendor/rebel-l/sisa/environments"
