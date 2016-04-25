@@ -140,6 +140,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 			chef.data_bags_path = "./vendor/rebel-l/sisa/data_bags"
 			chef.add_role "Default"
 			chef.environment = "development"
+			chef.add_recipe "NodeJs"
 
 			chef.json = {
 				'Iptables' => {
