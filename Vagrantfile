@@ -120,7 +120,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 			chef.json = {
 				'Iptables' => {
-					'WEBSERVER'		=> 'On'
+					'Whitelist'	=> {
+						'Ports' => [8080]
+					}
 				}
 			}
 		end
@@ -141,7 +143,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 			chef.json = {
 				'Iptables' => {
-					'WEBSERVER'		=> 'On'
+					'Whitelist'	=> {
+						'Ports' => [8080]
+					}
 				}
 			}
 		end
