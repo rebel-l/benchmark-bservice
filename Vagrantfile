@@ -6,7 +6,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	# Setup for all machines
 	config.vm.provision "shell", inline: "echo Starting Vagrant ..."
-	config.vm.box = "Ubuntu14.04LTS"
+	config.vm.box = "Ubuntu14.04LTS5018"
 	config.ssh.insert_key = false	# Avoid that vagrant removes default insecure key
 
     # Provider-specific configuration
