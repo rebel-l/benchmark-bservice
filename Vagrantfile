@@ -6,8 +6,8 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	# Setup for all machines
 	config.vm.provision "shell", inline: "echo Starting Vagrant ..."
-	config.vm.box = "Ubuntu14.04LTS"
-	config.vm.box_url = "https://www.dropbox.com/s/gzbxpgjih67uu2t/ubuntu1404lts5018.box?dl=1"
+	config.vm.box = "Ubuntu1604"
+	config.vm.box_url = "https://www.dropbox.com/s/g5tzb35b58sr6tr/ubuntu1604lts5110.box?dl=1"
 	config.ssh.insert_key = false	# Avoid that vagrant removes default insecure key
 
 	# Host manager setup
