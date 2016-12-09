@@ -13,7 +13,7 @@ namespace JsonBenchmark;
 
 class JsonBenchmark
 {
-	const ITERATIONS = 100000;
+	const ITERATIONS = 1000;
 
 	public $overallDuration = 0;
 	private $data = [];
@@ -54,14 +54,15 @@ class JsonBenchmark
 
 	/**
 	 * Executes the benchmark.
+	 * @param int $iterations[optional]
 	 */
-	public function execute()
+	public function execute($iterations = self::ITERATIONS)
 	{
 		$this->prepareData();
 
 		$start = microtime(true);
 
-		for ($i = 0; $i < self::ITERATIONS; $i++) {
+		for ($i = 0; $i < $iterations; $i++) {
 			$json = json_encode($this->data);
 			$data = json_decode($json);
 		}
