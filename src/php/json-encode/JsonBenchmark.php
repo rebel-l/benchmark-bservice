@@ -18,7 +18,7 @@ class JsonBenchmark
 
 	public $overallDuration = 0;
 	private $data = [];
-	private $iterations = 0;
+	private $iterations = self::ITERATIONS;
 
 	private function prepareData()
 	{
