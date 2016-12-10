@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Sends the response as JSON
  *

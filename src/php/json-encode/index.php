@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Starts the benchmark by a webserver.
  *

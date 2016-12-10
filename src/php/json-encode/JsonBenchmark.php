@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Just a benchmark for JSON operations.
  *
