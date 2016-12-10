@@ -18,6 +18,7 @@ class JsonBenchmark
 
 	public $overallDuration = 0;
 	private $data = [];
+	private $iterations = 0;
 
 	private function prepareData()
 	{
@@ -109,7 +110,7 @@ class JsonBenchmark
 	 */
 	public function getAverageDuration()
 	{
-		return $this->overallDuration / self::ITERATIONS;
+		return $this->overallDuration / $this->iterations;
 	}
 
 	/**
@@ -118,6 +119,7 @@ class JsonBenchmark
 	 */
 	public function execute($iterations = self::ITERATIONS)
 	{
+		$this->iterations = $iterations;
 		$this->prepareData();
 
 		$start = microtime(true);
