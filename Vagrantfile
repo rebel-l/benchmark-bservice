@@ -49,6 +49,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.define "PhpNginxService", autostart: true do |phps|
 	    phps.vm.provider "virtualbox" do |vb|
             vb.name = "Benchmark-PhpNginxService"
+            vb.cpus = 2
         end
 
 		phps.vm.network "private_network", ip: "192.168.34.3"
@@ -172,6 +173,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.define "NodeJsService", autostart: true do |njs|
 	    njs.vm.provider "virtualbox" do |vb|
             vb.name = "Benchmark-NodeJsService"
+            vb.cpus = 2
         end
 
 		njs.vm.network "private_network", ip: "192.168.34.7"
