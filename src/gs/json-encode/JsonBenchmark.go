@@ -1,8 +1,9 @@
 package main
 
 import (
-	"fmt"
 	"encoding/json"
+	"fmt"
+	"time"
 )
 
 const ITERATIONS int = 1000;
@@ -20,10 +21,12 @@ type Book struct {
 var data [10]Book;
 
 func execute(numberOfIterations int) {
+	var start int64;
+	var	stop int64;
 	iterations = numberOfIterations;
-	fmt.Printf("Iterations: %d \n\n", ITERATIONS);
 	prepareData();
 
+	start = time.Now().UnixNano();
 	for i := 0; i < iterations; i++ {
 		jsonByte , err := json.Marshal(data);
 		if (err != nil) {
@@ -40,6 +43,8 @@ func execute(numberOfIterations int) {
 			return;
 		}
 		//fmt.Println(jsonData[3]);
+		stop = time.Now().UnixNano();
+		overallDuration = float32((stop - start)) / float32(1000000);
 	}
 }
 
