@@ -139,6 +139,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.define "GoService", autostart: true do |gos|
 	    gos.vm.provider "virtualbox" do |vb|
             vb.name = "Benchmark-GoService"
+            vb.cpus = 2
         end
 
 		gos.vm.network "private_network", ip: "192.168.34.4"
