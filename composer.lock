@@ -4,22 +4,22 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fd2ee24d2e7d8b274685c770cfe03959",
-    "content-hash": "d8dd0880f4aff6eaa6498abd47fcef41",
+    "hash": "b6b69be4c46e6c7aaf43f6f9979d24ce",
+    "content-hash": "4471c64af36a8e3d14f996fd059d0a33",
     "packages": [],
     "packages-dev": [
         {
             "name": "rebel-l/sisa",
-            "version": "1.5.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://bitbucket.org/Rebel-L/sisa.git",
-                "reference": "96ff24a8530c4aa7552a17203dd6c21717b90999"
+                "reference": "d8b4c66d77ab60c6536c010c77c8f79d219aa3e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://bitbucket.org/Rebel-L/sisa/get/96ff24a8530c4aa7552a17203dd6c21717b90999.zip",
-                "reference": "96ff24a8530c4aa7552a17203dd6c21717b90999",
+                "url": "https://bitbucket.org/Rebel-L/sisa/get/d8b4c66d77ab60c6536c010c77c8f79d219aa3e4.zip",
+                "reference": "d8b4c66d77ab60c6536c010c77c8f79d219aa3e4",
                 "shasum": ""
             },
             "type": "project",
@@ -35,7 +35,7 @@
                     "role": "CTO"
                 }
             ],
-            "description": "This package provides you chef cookbooks for setting up servers for web applications based on PHP using Vagrant, Virtual Box and Chef Solo. You'll find more details in the README.md",
+            "description": "This package provides you chef cookbooks for setting up servers for web applications based on PHP, NodeJS or Golang using Vagrant, Virtual Box and Chef Solo. You'll find more details in the README.md",
             "homepage": "https://bitbucket.org/Rebel-L/sisa",
             "keywords": [
                 "chef",
@@ -43,7 +43,7 @@
                 "provisioning",
                 "server"
             ],
-            "time": "2016-04-25 14:48:44"
+            "time": "2016-11-06 21:47:20"
         }
     ],
     "aliases": [],
