@@ -6,8 +6,8 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	# Setup for all machines
 	config.vm.provision "shell", inline: "echo Starting Vagrant ..."
-	config.vm.box = "Ubuntu14.04LTS"
-	config.vm.box_url = "https://www.dropbox.com/s/gzbxpgjih67uu2t/ubuntu1404lts5018.box?dl=1"
+	config.vm.box = "Ubuntu1604"
+	config.vm.box_url = "https://www.dropbox.com/s/g5tzb35b58sr6tr/ubuntu1604lts5110.box?dl=1"
 	config.ssh.insert_key = false	# Avoid that vagrant removes default insecure key
 
 	# Host manager setup
@@ -49,6 +49,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.define "PhpNginxService", autostart: true do |phps|
 	    phps.vm.provider "virtualbox" do |vb|
             vb.name = "Benchmark-PhpNginxService"
+            vb.cpus = 2
         end
 
 		phps.vm.network "private_network", ip: "192.168.34.3"
@@ -138,6 +139,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.define "GoService", autostart: true do |gos|
 	    gos.vm.provider "virtualbox" do |vb|
             vb.name = "Benchmark-GoService"
+            vb.cpus = 2
         end
 
 		gos.vm.network "private_network", ip: "192.168.34.4"
@@ -172,6 +174,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.define "NodeJsService", autostart: true do |njs|
 	    njs.vm.provider "virtualbox" do |vb|
             vb.name = "Benchmark-NodeJsService"
+            vb.cpus = 2
         end
 
 		njs.vm.network "private_network", ip: "192.168.34.7"
