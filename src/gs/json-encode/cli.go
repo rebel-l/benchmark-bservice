@@ -1,6 +1,7 @@
 package main
 
 import (
+	"./benchmark"
 	"fmt"
 	"flag"
 )
@@ -8,13 +9,13 @@ import (
 func main() {
 	fmt.Printf("\nBenchmark starting ...\n");
 
-	numberOfIterations := flag.Int("i", ITERATIONS, "an int");
+	numberOfIterations := flag.Int("i", benchmark.ITERATIONS, "an int");
 	flag.Parse();
 	fmt.Printf("Iterations: %d \n\n", *numberOfIterations);
 
-	execute(*numberOfIterations);
+	benchmark.Execute(*numberOfIterations);
 
-	fmt.Printf("Overall Duration: %f ms\n", overallDuration);
-	fmt.Printf("Average Duration: %f ms", getAverageDuration());
+	fmt.Printf("Overall Duration: %f ms\n", benchmark.OverallDuration);
+	fmt.Printf("Average Duration: %f ms", benchmark.GetAverageDuration());
 	fmt.Printf("\n\n");
 }

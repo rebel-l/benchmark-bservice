@@ -1,4 +1,4 @@
-package main
+package benchmark
 
 import (
 	"encoding/json"
@@ -8,7 +8,7 @@ import (
 
 const ITERATIONS int = 1000;
 
-var overallDuration float32 = 0.0;
+var OverallDuration float32 = 0.0;
 var iterations int = ITERATIONS;
 
 type Book struct {
@@ -20,7 +20,7 @@ type Book struct {
 
 var data [10]Book;
 
-func execute(numberOfIterations int) {
+func Execute(numberOfIterations int) {
 	var start int64;
 	var	stop int64;
 	iterations = numberOfIterations;
@@ -44,12 +44,12 @@ func execute(numberOfIterations int) {
 		}
 		//fmt.Println(jsonData[3]);
 		stop = time.Now().UnixNano();
-		overallDuration = float32((stop - start)) / float32(1000000);
+		OverallDuration = float32((stop - start)) / float32(1000000);
 	}
 }
 
-func getAverageDuration() float32 {
-	return overallDuration / float32(iterations);
+func GetAverageDuration() float32 {
+	return OverallDuration / float32(iterations);
 }
 
 func prepareData() {
